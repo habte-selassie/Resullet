@@ -1,10 +1,8 @@
-
 import './index.css'
 import { useState, useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
-
 
 const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>')
 
@@ -32,12 +30,3 @@ export default function App() {
     return (<div>Logged in!</div>)
   }
 }
-
-
-
-
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
