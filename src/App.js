@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import AppSupa from './AppSupa'
+//import AppSupa from './AppSupa'
 
 class App extends Component {
   render() {
@@ -9,7 +8,8 @@ class App extends Component {
      
       
 
-        <AppSupa />
+        // <AppSupa />
+        <div>h</div>
 
         
     );
