@@ -5,18 +5,15 @@ import './App.css';
 import { ResumePage } from './screens';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import './App.css';
+//import AppSupa from './AppSupa'
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <ResumePage />
-      </Provider>
-      
-
-        // <AppSupa />
-
-        
+      </Provider>       
     );
   }
 };
