@@ -4,9 +4,7 @@ import { createClient } from '@supabase/supabase-js'
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
-const supabase = createClient('https://uqarcgmdowjhionwgvhw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxYXJjZ21kb3dqaGlvbndndmh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjM3MzM3NDIsImV4cCI6MjAzOTMwOTc0Mn0.e1A-0jxV4ZcV7B4oIEY_WUiYHqSd6ljQdtHNS1FxymM')
-
-
+const supabase = createClient('https://<project>.supabase.co', '<your-anon-key>')
 
 export default function App() {
   const [session, setSession] = useState(null)
@@ -31,9 +29,4 @@ export default function App() {
   else {
     return (<div>Logged in!</div>)
   }
-
-
-  return(
-    <div>hi</div>
-  )
 }
