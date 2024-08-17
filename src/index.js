@@ -5,26 +5,8 @@ import Login from './Login/login';
 import { MetaMaskProvider } from "@metamask/sdk-react";
 import './index.css';
 
-// root.render(
-//   <React.StrictMode>
-//     <MetaMaskProvider
-//       debug={false}
-//       sdkOptions={{
-//         dappMetadata: {
-//           name: "Example React Dapp",
-//           url: window.location.href,
-//         },
-//         infuraAPIKey: process.env.INFURA_API_KEY,
-//         // Other options.
-//       }}
-//     >
-//       <App />
-//     </MetaMaskProvider>
-//   </React.StrictMode>
-// );
-
 // Create a Parent component to render both App and Login
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <MetaMaskProvider
       debug={true}
@@ -33,31 +15,27 @@ const Main = () => {
           name: "Example React Dapp",
           url: window.location.href,
         },
-        
-        
+        checkInstallationImmediately: true,
+        checkInstallationOnAllCalls: true,
+        communicationServerUrl: "https://metamask-sdk-socket.metafi.codefi.network/",
         infuraAPIKey: process.env.INFURA_API_KEY,
-        // Other options.
-      
+        
+        // Handling deeplinks
+        openDeeplink: (link: string) => {
+          if (canOpenLink) {
+            Linking.openURL(link); // Opens the deeplink
+          }
+        },
       }}
     >
-     <div>
-      <App />
-      <Login />
-    </div>
+      <div>
+        <App />
+        <Login />
+      </div>
     </MetaMaskProvider>
-   
   );
 };
 
 // Render the Parent component
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(<Main />);
-
-
-
-// const root = ReactDOM.createRoot(
-//   document.getElementById("root") as HTMLElement
-// );
-
-
-
