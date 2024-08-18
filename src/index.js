@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { MetaMaskProvider } from '@metamask/sdk-react';
 import App from './App';
-import Login from './Login/login';
+// import Login from './Login/login';
 import './index.css';
 
 // Create a Parent component to render both App and Login
@@ -50,7 +50,7 @@ const Main = () => {
     >
       <div>
         <App />
-        <Login />
+        {/* <Login /> */}
       </div>
     </MetaMaskProvider>
   );
